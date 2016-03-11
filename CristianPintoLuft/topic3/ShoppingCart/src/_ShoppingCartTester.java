@@ -5,20 +5,20 @@ import org.junit.Test;
 public class _ShoppingCartTester {
 
 	@Test
-	public void addCart() {
+	public void shouldAddACart() {
 		@SuppressWarnings("unused")
 		ShoppingCart cart = new ShoppingCart();
 	}
 
 	@Test
-	public void addItem() {
+	public void shouldAddAnItemInTheCart() {
 		ShoppingCart cart = new ShoppingCart();
 		Item cheese = new Item("Cheese", 5);
 		assertEquals(true, cart.addItem(cheese, 1));
 	}
 
 	@Test
-	public void searchItem() {
+	public void shouldFindAnAddedItem() {
 		ShoppingCart cart = new ShoppingCart();
 		Item cheese = new Item("Cheese", 98.06);
 		Item bread = new Item("Bread", 10.15);
@@ -32,7 +32,7 @@ public class _ShoppingCartTester {
 	}
 
 	@Test
-	public void deleteItem() {
+	public void shouldDeleteAnAddedItem() {
 		ShoppingCart cart = new ShoppingCart();
 		Item cheese = new Item("Cheese", 98.06);
 		Item bread = new Item("Bread", 10.15);
@@ -46,7 +46,7 @@ public class _ShoppingCartTester {
 	}
 
 	@Test
-	public void calculatePrice() {
+	public void shouldCalculateTheSumOfAllAddedItems() {
 		ShoppingCart cart = new ShoppingCart();
 		Item cheese = new Item("Cheese", 98.06);
 		Item bread = new Item("Bread", 10.15);
@@ -60,7 +60,7 @@ public class _ShoppingCartTester {
 	}
 
 	@Test
-	public void updateItem() {
+	public void shouldChangeAItemNameIfTheItemIsInTheCart() {
 		ShoppingCart cart = new ShoppingCart();
 		Item cheese = new Item("Cheese", 98.06);
 		Item bread = new Item("Bread", 10.15);
@@ -70,7 +70,7 @@ public class _ShoppingCartTester {
 	}
 
 	@Test
-	public void buyItems() {
+	public void shouldDiscountThePriceOfItemsDeletedOfTheCartFromTheTotal() {
 		ShoppingCart cart = new ShoppingCart();
 		Item cheese = new Item("Cheese", 98.06);
 		Item bread = new Item("Bread", 10.15);
@@ -88,5 +88,5 @@ public class _ShoppingCartTester {
 		cart.deleteItem(beef, 2);
 		cart.deleteItem(cheese, 1);
 		assertEquals(174.11, cart.totalPrice(), 0.01);
-	}
+	}	
 }
